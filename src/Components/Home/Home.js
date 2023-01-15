@@ -45,7 +45,7 @@ const Home = () => {
           data.map((item) => (
             <div className='card'>
               <div className='cardImage'>
-                <img src={`/uploads/${item.image}`} alt={item.name}></img>
+                <img src={`/uploads/${item.image}`} alt={item.name} width={'100%'}></img>
               </div>
               <div className='cardBody'>
                 <h2>heading</h2>
