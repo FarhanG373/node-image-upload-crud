@@ -48,7 +48,7 @@ const Home = () => {
                 <img src={`/uploads/${item.image}`} alt={item.name} width={'100%'}></img>
               </div>
               <div className='cardBody'>
-                <h2>heading</h2>
+                <h2>{item.name}</h2>
                 <p>{item.date}</p>
                 <button onClick={() => dltUsr(item.id)}>Delete</button>
               </div>
