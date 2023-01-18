@@ -3,6 +3,9 @@ const router = new express.Router();
 const conn = require('../DB/connection');
 const multer = require('multer');
 const moment = require('moment');
+//For adding image with path in db
+// const apiPath = 'http://localhost:5001';
+
 
 
 //Image storage config
@@ -40,10 +43,14 @@ router.post('/register', upload.single("photo"), (req, res) => {
     }
     try {
         let date = moment(new Date()).format('YYYY-MM_DD HH:MM:SS');
+        //For adding image with path in db
+        // let imgPath = `${apiPath}/uploads/` + filename;
         conn.query("INSERT INTO `movie_review` SET ?", {
             name: fName,
             moviewReview: date,
             image: filename,
+            //For adding image with path in db
+            // image: imgPath,
             date: date
         }, (err, result) => {
             if (err) {
